@@ -20,27 +20,12 @@ function Register() {
         setMessage(data.error)
         return
       }
-      setMessage("Registered Successfully! Please Log in.")
+      props.setRegistered(true)
       navigate("/")
       
       
   }
   return (
-    // <div className='flex flex-col justify-center items-center h-screen w-screen'>
-    //   <h1 className='text-3xl'>Welcome to Todo App</h1>
-    //   <br/>
-    //   <form  className="flex flex-col justify-center items-center bg-amber-200 h-48 w-72"onSubmit={handlesubmit}>
-    //     <label htmlFor="email" >Email </label>
-    //     <input className="border"id="email"type="text" placeholder='Enter email here' name="email" onChange={(e)=>setEmail(e.target.value)}/>
-    //     <br/>
-    //     <label htmlFor="password" >Create Password</label>
-    //     <input className="border" id="password"type="password" placeholder='Enter password here' name="password" onChange={(e)=>setPassword(e.target.value)}/>
-    //     <br/>
-    //     <input className="border" type="submit" value="Sign Up"/>
-    //   </form>
-    //   <br/>
-    //   <span className='text-black'>{message}</span>
-    // </div>
     <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-br from-yellow-100 via-amber-200 to-orange-300 px-4">
   <h1 className="text-4xl font-bold text-amber-800 mb-6 drop-shadow-lg">
     Welcome to Todo App

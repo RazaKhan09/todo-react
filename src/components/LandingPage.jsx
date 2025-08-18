@@ -7,6 +7,9 @@ function LandingPage(props) {
   const [message,setMessage]=useState("")
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
+  if(props.registered){
+    setMessage("Registration Successfull. Please Log in")
+  }
   const handlesubmit=async (e)=>{
     e.preventDefault()
     const response=await fetch("https://todo-backend-r24b.onrender.com/login", {
@@ -27,25 +30,6 @@ function LandingPage(props) {
   }
 
   return (
-    // <div className='flex flex-col justify-center items-center h-screen w-screen'>
-    //   <h1 className='text-3xl'>Welcome to Todo App</h1>
-    //   <br/>
-    //   <form  className="flex flex-col justify-center items-center bg-amber-200 h-48 w-72"onSubmit={handlesubmit}>
-    //     <label htmlFor="email" >Email </label>
-    //     <input className="border"id="email"type="text" placeholder='Enter email here' name="email" onChange={(e)=>setEmail(e.target.value)}/>
-    //     <br/>
-    //     <label htmlFor="password" >Password</label>
-    //     <input className="border" id="password"type="password" placeholder='Enter password here' name="password" onChange={(e)=>setPassword(e.target.value)}/>
-    //     <br/>
-    //     <input className="border" type="submit" value="Log In"/>
-    //   </form>
-    //   <br/>
-    //   <span className='text-black'>{message}</span>
-    //   <span>Doesn't have an account?</span>
-    //   <NavLink to="/register">
-    //     <span>Click here to Register</span>
-    //   </NavLink>
-    // </div>
     <div className="flex flex-col justify-center items-center h-screen w-screen bg-gradient-to-br from-amber-100 via-white to-amber-200">
   <h1 className="text-4xl font-extrabold text-amber-700 mb-6 drop-shadow-sm">
     Welcome to Todo App

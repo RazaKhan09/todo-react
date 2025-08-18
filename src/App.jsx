@@ -7,13 +7,14 @@ import LandingPage from './components/LandingPage'
 
 function App() {
 const [isLoggedIn,setIsLoggedIn]=useState(false)
+const [registered,setRegistered]=useState(false)
 const [todos,setTodos]=useState([])
 const[comp,setComp]=useState([])
 const [user,setUser]=useState("")
 const router=createBrowserRouter([
   {
     path:"/",
-    element:<LandingPage setUser={setUser} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>,
+    element:<LandingPage registered={registered}setUser={setUser} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>,
   },
     
   {
@@ -22,7 +23,7 @@ const router=createBrowserRouter([
   },
   {
     path:"/register",
-    element:<Register/>
+    element:<Register setRegistered={setRegistered}/>
   },     
 ])
   return (

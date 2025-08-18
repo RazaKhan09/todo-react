@@ -55,6 +55,7 @@ function AddTodo(props) {
       placeholder="Enter a Todo..."
       value={content}
       onChange={(e) => setContent(e.target.value)}
+      required
     />
     <button
       type="submit"

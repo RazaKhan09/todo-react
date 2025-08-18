@@ -14,7 +14,7 @@ const [user,setUser]=useState("")
 const router=createBrowserRouter([
   {
     path:"/",
-    element:<LandingPage registered={registered}setUser={setUser} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>,
+    element:<LandingPage registered={registered} setUser={setUser} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>,
   },
     
   {

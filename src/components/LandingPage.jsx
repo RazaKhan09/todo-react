@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -7,9 +7,11 @@ function LandingPage(props) {
   const [message,setMessage]=useState("")
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
-  if(props.registered){
+  useEffect(()=>{
+    if(props.registered){
     setMessage("Registration Successfull. Please Log in")
   }
+  },[])
   const handlesubmit=async (e)=>{
     e.preventDefault()
     const response=await fetch("https://todo-backend-r24b.onrender.com/login", {

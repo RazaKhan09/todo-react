@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
 
-function Register() {
+function Register(props) {
   const navigate=useNavigate()
   const [message,setMessage]=useState("")
   const [email,setEmail]=useState("")

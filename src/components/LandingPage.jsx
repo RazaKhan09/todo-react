@@ -9,7 +9,7 @@ function LandingPage(props) {
   const [password,setPassword]=useState("")
   useEffect(()=>{
     if(props.registered){
-    setMessage("Registration Successfull. Please Log in")
+    setMessage("Registration Successful. Please Log in")
   }
   },[])
   const handlesubmit=async (e)=>{

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Home'
 import Register from './components/Register'
 import LandingPage from './components/LandingPage'
+import axios from 'axios'
 
 function App() {
 const [isLoggedIn,setIsLoggedIn]=useState(false)

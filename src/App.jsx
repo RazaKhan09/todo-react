@@ -13,7 +13,6 @@ const [todos,setTodos]=useState([])
 const[comp,setComp]=useState([])
 const [user,setUser]=useState("")
 const [loading, setLoading] = useState(true);
-const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 useEffect(() => {
     const restoreSession = async () => {
@@ -26,7 +25,6 @@ useEffect(() => {
         setIsAuthenticated(true);
       } catch (err) {
         console.error("Session restore failed ❌", err);
-        setIsAuthenticated(false);
       } finally {
         setLoading(false);
       }

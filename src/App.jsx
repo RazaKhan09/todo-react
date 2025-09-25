@@ -24,7 +24,7 @@ useEffect(() => {
         );
         setIsLoggedIn(true);
         console.log(response)
-        console.log(response.data.user.email)
+        setUser(response.data.user.email)
       } catch (err) {
         console.error("Session restore failed ❌", err);
         setIsLoggedIn(false)

@@ -17,12 +17,13 @@ const [loading, setLoading] = useState(true);
 useEffect(() => {
     const restoreSession = async () => {
       try {
-        await axios.post(
+        const response=await axios.post(
           "https://todo-backend-r24b.onrender.com/refresh-token",
           {},
           { withCredentials: true } // 🔑 so cookies are included
         );
         setIsLoggedIn(true);
+        console.log(response)
       } catch (err) {
         console.error("Session restore failed ❌", err);
         setIsLoggedIn(false)

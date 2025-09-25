@@ -22,9 +22,10 @@ useEffect(() => {
           {},
           { withCredentials: true } // 🔑 so cookies are included
         );
-        setIsAuthenticated(true);
+        setIsLoggedIn(true);
       } catch (err) {
         console.error("Session restore failed ❌", err);
+        setIsLoggedIn(false)
       } finally {
         setLoading(false);
       }

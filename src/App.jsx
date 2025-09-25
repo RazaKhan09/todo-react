@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Home'
@@ -11,6 +11,30 @@ const [registered,setRegistered]=useState(false)
 const [todos,setTodos]=useState([])
 const[comp,setComp]=useState([])
 const [user,setUser]=useState("")
+const [loading, setLoading] = useState(true);
+const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+useEffect(() => {
+    const restoreSession = async () => {
+      try {
+        await axios.post(
+          "https://todo-backend-r24b.onrender.com/refresh-token",
+          {},
+          { withCredentials: true } // 🔑 so cookies are included
+        );
+        setIsAuthenticated(true);
+      } catch (err) {
+        console.error("Session restore failed ❌", err);
+        setIsAuthenticated(false);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    restoreSession();
+  }, []);
+  if (loading) return <p>Loading...</p>;
+
 const router=createBrowserRouter([
   {
     path:"/",
@@ -26,6 +50,7 @@ const router=createBrowserRouter([
     element:<Register setRegistered={setRegistered}/>
   },
 ])
+
   return (
     <>
       <RouterProvider router={router}/>
